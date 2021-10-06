@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public int Speed;
+    [Range(30, 40)] public int Speed;
     public bool OnGround;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
         GetComponentInParent<Rigidbody>().velocity = new Vector3(Input.GetAxis("Horizontal") * Speed, GetComponentInParent<Rigidbody>().velocity.y, 0);
         if (Input.GetKeyDown(KeyCode.Space) && (OnGround == true))
         {
-            GetComponentInParent<Rigidbody>().velocity = new Vector3(0, 10, 0);
+            GetComponentInParent<Rigidbody>().velocity = GetComponentInParent<Rigidbody>().velocity + new Vector3(0, 10, 0);
             OnGround = false;
         }
     }
@@ -27,6 +27,7 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             OnGround = true;
+           
         }
     }
 }

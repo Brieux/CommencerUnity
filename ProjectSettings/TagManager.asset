@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Killer
+  - Score
+  - GameManager
   layers:
   - Default
   - TransparentFX
