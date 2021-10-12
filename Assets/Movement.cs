@@ -21,6 +21,8 @@ public class Movement : MonoBehaviour
             GetComponentInParent<Rigidbody>().velocity = GetComponentInParent<Rigidbody>().velocity + new Vector3(0, 10, 0);
             OnGround = false;
         }
+        
+         
     }
     private void OnCollisionEnter(Collision collision)
     {

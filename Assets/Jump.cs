@@ -10,6 +10,7 @@ public class Jump : MonoBehaviour
     public GameObject UIDeb;
     public GameObject GamePipes;
     public bool begin;
+    public GameObject cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,12 @@ public class Jump : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && begin == false)
         {
-            GetComponentInParent<Transform>().position = new Vector3(-3.21000004f, 0.0858799964f, -5.32000017f);
+            GetComponentInParent<Transform>().position = new Vector3(-1.21000004f, 0.0858799964f, -5.32000017f);
             Time.timeScale = 1;
             GetComponentInParent<Rigidbody>().velocity = new Vector3(0, 9, 0);
             begin = true;
             UIDeb.SetActive(false);
+            
         }
         if (Input.GetMouseButtonDown(0))
         {
@@ -35,6 +37,7 @@ public class Jump : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && (GamePipes.GetComponent<GeneratePipe>().finish == true)){
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         }
+        this.GetComponent<Transform>().eulerAngles = new Vector3 (0,0,GetComponentInParent<Rigidbody>().velocity.y*4.5f);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -46,7 +49,8 @@ public class Jump : MonoBehaviour
             GamePipes.GetComponent<GeneratePipe>().StopPipe();
             BG.GetComponentInChildren<SpriteRenderer>().sprite = Night;
             go.SetActive(true);
-            this.GetComponent<Transform>().Rotate(0, 0, -90);            
+            this.GetComponent<Transform>().Rotate(0, 0, -90);
+            cam.GetComponent<Shake>().activated = true;
         }
     }
 }

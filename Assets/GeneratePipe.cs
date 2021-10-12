@@ -26,7 +26,7 @@ public class GeneratePipe : MonoBehaviour
     {
         if (finish == false)
         {
-            GameObject pipe = Instantiate<GameObject>(prefab, new Vector3(Space, Random.Range(-9.0f, 3f), -6f), Quaternion.identity);
+            GameObject pipe = Instantiate<GameObject>(prefab, new Vector3(Space, Random.Range(-7.0f, 1f), -6f), Quaternion.identity);
             pipe.GetComponent<MovePipe>().player = Bird;
             AllPipe.Add(pipe);
         }
