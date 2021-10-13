@@ -7,6 +7,7 @@ public class Shake : MonoBehaviour
     float timing = 0;
     public bool activated = false;
     public int compteur = 300;
+
     // Start is called before the first frame update
     void Start()
     {

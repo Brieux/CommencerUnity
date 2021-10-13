@@ -25,7 +25,7 @@ public class Score : MonoBehaviour
     {
         score += 1;
         UI.GetComponentInChildren<TextMesh>().text = score.ToString();
-        cam.GetComponent<Shake>().activated = true;
+        //cam.GetComponent<Shake>().activated = true;
         if (score > data.highScore)
         {
             data.highScore = score;

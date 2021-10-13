@@ -6,7 +6,7 @@ public class MovePipe : MonoBehaviour
 {
     public GameObject player;
     private bool ScoreBool = true;
-    private bool hard = false;
+    public bool hard = false;
     private float basics;
     // Start is called before the first frame update
     void Start()
