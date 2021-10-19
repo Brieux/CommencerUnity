@@ -13,6 +13,7 @@ public class Spawning2D : MonoBehaviour
         Instantiate(BallPrefab);
         Instantiate(BallPrefab);
 
+
     }
 
     // Update is called once per frame
