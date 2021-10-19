@@ -8,6 +8,7 @@ TagManager:
   - Killer
   - Score
   - GameManager
+  - Ball
   layers:
   - Default
   - TransparentFX
