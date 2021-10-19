@@ -19,11 +19,16 @@ public class Impulse : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
+    {   
         if (collision.gameObject.tag == "Ball")
         {
+            float direction = Vector3.Angle(collision.gameObject.transform.position, this.gameObject.transform.position);
             Vector3 pos = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, 0);
-            Instantiate(FX, pos, new Quaternion(0, 0, 0, 0));
+            ParticleSystem FXS = Instantiate(FX, pos, new Quaternion());
+            
+            FXS.gameObject.transform.eulerAngles = new Vector3(0,0, direction);
+
+
         }
     }
 }

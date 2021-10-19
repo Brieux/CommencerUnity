@@ -42,9 +42,12 @@ public class ClickingOnBall : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if ((collision.gameObject.GetComponent<SetColor>().Type == this.gameObject.GetComponent<SetColor>().Type) && (Destroyer == true))
+        if (collision.gameObject.tag == "Ball")
         {
-            collision.GetComponent<ClickingOnBall>().Destroyer = true;
+            if ((collision.gameObject.GetComponent<SetColor>().Type == this.gameObject.GetComponent<SetColor>().Type) && (Destroyer == true))
+            {
+                collision.GetComponent<ClickingOnBall>().Destroyer = true;
+            }
         }
     }
 
