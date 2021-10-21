@@ -22,19 +22,8 @@ public class Impulse : MonoBehaviour
     {   
         if (collision.gameObject.tag == "Ball")
         {
-            float direction = Vector3.Angle(collision.gameObject.transform.position, this.gameObject.transform.position);
             Vector3 pos = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, 0);
-            ParticleSystem FXS = Instantiate(FX, pos, new Quaternion());
-
-            Vector3 tamp = Vector3.MoveTowards(collision.gameObject.transform.position, this.gameObject.transform.position, 1000);
-            Vector2 TampV2 = new Vector2(tamp.x, tamp.y);
-            Debug.Log(TampV2);
-            Debug.Log(Vector2.Perpendicular(TampV2));
-            FXS.gameObject.transform.eulerAngles = new Vector3(0,0, TampV2.x*90 + TampV2.y * 90);
-            /*Debug.Log(direction);
-            //Debug.Log(Vector3.Dot(collision.gameObject.transform.position, this.gameObject.transform.position));
-            Debug.Log(Quaternion.LookRotation(collision.gameObject.transform.position, this.gameObject.transform.position));*/
-
+            ParticleSystem FXS = Instantiate(FX, pos, new Quaternion(Random.Range(0,90),Random.Range(0, 90), Random.Range(0, 90), Random.Range(0, 90)));
         }
     }
 }
