@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{2C5296CE-07AE-D486-EB2F-DC6A7A0B986F}</ProjectGuid>
+    <ProjectGuid>{05D58167-3FDB-0BA4-5F71-EBA25F8A4A55}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -67,9 +67,11 @@
     <Compile Include="Assets\Script\Score.cs" />
     <Compile Include="Assets\Script\GeneratePipe.cs" />
     <Compile Include="Assets\Script\ClickingOnBall.cs" />
+    <Compile Include="Assets\Animation\AnimationState.cs" />
     <Compile Include="Assets\Script\SetColor.cs" />
     <Compile Include="Assets\Script\SceneLoader.cs" />
-    <Compile Include="Assets\Animation\AnimationState.cs" />
+    <Compile Include="Assets\LaunchBall.cs" />
+    <Compile Include="Assets\MoveForward.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
