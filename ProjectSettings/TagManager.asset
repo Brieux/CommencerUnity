@@ -9,6 +9,7 @@ TagManager:
   - Score
   - GameManager
   - Ball
+  - Floor
   layers:
   - Default
   - TransparentFX
